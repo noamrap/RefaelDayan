@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-    
+       <link rel="snippet" type="text/html" href="https://noamrap.github.io/SNIPPEST/index.html">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const snippets = document.querySelectorAll("[data-snippet]");
+            for (const snippet of snippets) {
+                fetch(snippet.getAttribute("data-snippet"))
+                    .then(response => response.text())
+                    .then(html => snippet.innerHTML = html);
+            }
+        });
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>רפאל דיין משרד עורכי דין</title>
@@ -498,13 +508,7 @@
                 }
             }
         </style>
-
-        <div class="footer">
-            <div class="container">
-                <p>&copy;רפאל דיין משרד עורכי דין</p>
-            </div>
-        </div>
-
+  <div data-snippet="https://noamrap.github.io/SNIPPEST/index.html"></div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
